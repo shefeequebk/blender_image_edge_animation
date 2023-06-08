@@ -6,8 +6,8 @@ from utils import clear_blender_scene, set_render_camera, set_render_settings, r
     set_bloom_settings
 from curve_list_to_blend_anim import curve_list_to_animation
 
-image_path = 'path/to/image/file'
-output_video_path = 'path/to/video/output'
+image_path = 'path/to/image/ file'
+output_video_path = 'path/to/video/ output'
 blender_settings = {
     "render_settings": {
         "Render Engine": 'BLENDER_EEVEE',  # 'BLENDER_EEVEE'  # OR 'CYCLES'
