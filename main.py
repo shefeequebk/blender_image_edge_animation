@@ -6,8 +6,8 @@ from utils import clear_blender_scene, set_render_camera, set_render_settings, r
     set_bloom_settings
 from curve_list_to_blend_anim import curve_list_to_animation
 
-image_path = r'F:\Upwork\UNCONFIRM\E Mac\dwnlds/1_JwGcyt5k8NfxqfWBWFkuLw.png'
-output_video_path = r'F:\Upwork\UNCONFIRM\E Mac\curve_animation\data\output\render_video_out2'
+image_path = 'path/to/image/file'
+output_video_path = 'path/to/video/output'
 blender_settings = {
     "render_settings": {
         "Render Engine": 'BLENDER_EEVEE',  # 'BLENDER_EEVEE'  # OR 'CYCLES'
@@ -43,6 +43,6 @@ if __name__ == '__main__':
     set_render_settings(blender_settings["render_settings"])
     bpy.ops.render.render(animation=True)
     current_script_path = os.path.dirname(os.path.realpath(__file__))
-    bpy.ops.wm.save_mainfile(filepath=f'{current_script_path}/blend_file.blend')
+    bpy.ops.wm.save_mainfile(filepath=f'{current_script_path}/blender_file/out_blend_file.blend')
 
 

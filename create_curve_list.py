@@ -6,11 +6,10 @@ import matplotlib.pyplot as plt
 from scipy.ndimage import convolve
 
 from group_nearby_curve_function import group_nearby_curves
-from utils import detect_curves, draw_curve_colored, split_curve_jumps, detect_curves_2
+from utils import detect_curves, draw_curve_colored, detect_curves_2
 
 
 def create_curve_list(image):
-    # end_point_curve_sort2.py
     _, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
     binary_image = 255 - binary_image
     binary_image = binary_image > 128
@@ -47,16 +46,10 @@ def create_curve_list(image):
     skeleton_removed_end_curves = skeleton_removed_ends + junction_points
     curves_end_removed = detect_curves_2(skeleton_removed_end_curves)
 
-    # curves_end_removed= [crv for crv in curves_end_removed if len(crv)>20]
-    # print('curves_end_removed', len(curves_end_removed))
-    # print('curves_end_removed', curves_end_removed)
 
     curves_grouped = group_nearby_curves(curves_end_removed)
-    # print('curves_grouped', curves_grouped)
+
     return curves_grouped
 
 
-# image_path = r'F:\Upwork\UNCONFIRM\E Mac\dwnlds/649fa96784effaa4ee9970052aec8a59.jpg'
-# curve_list, img = create_curve_list(image_path)
-# print(len(curve_list), img.shape)
-# print('curve_list', curve_list)
+

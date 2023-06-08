@@ -22,7 +22,6 @@ def curve_list_to_animation(curves, curves_color):
         index_string = str(i + 1).zfill(3)
         curve_name = f"{'BezierCurve'}.{index_string}"
         print(curve_name)
-        # curve_name = 'BezierCurve.001'  # replace this with the name of your curve
 
         # Make sure the curve exists in the data
         if curve_name in bpy.data.curves:
