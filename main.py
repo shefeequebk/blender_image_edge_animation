@@ -43,6 +43,9 @@ if __name__ == '__main__':
     set_render_settings(blender_settings["render_settings"])
     bpy.ops.render.render(animation=True)
     current_script_path = os.path.dirname(os.path.realpath(__file__))
-    bpy.ops.wm.save_mainfile(filepath=f'{current_script_path}/blender_file/out_blend_file.blend')
+    blend_file_save_folder = f'{current_script_path}/blender_file'
+    if not os.path.exists(blend_file_save_folder):
+        os.makedirs(blend_file_save_folder)
+    bpy.ops.wm.save_mainfile(filepath=f'{blend_file_save_folder}/out_blend_file.blend')
 
 
