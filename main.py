@@ -1,4 +1,6 @@
 import os
+from pathlib import Path
+from tkinter import filedialog
 import bpy
 import cv2
 from create_curve_list import create_curve_list
@@ -6,8 +8,16 @@ from utils import clear_blender_scene, set_render_camera, set_render_settings, r
     set_bloom_settings
 from curve_list_to_blend_anim import curve_list_to_animation
 
-image_path = 'path/to/image/file'
-output_video_path = 'path/to/video/output'
+filetypes = (
+    ('image files', '*.png *.jpg *.jpeg'),
+    ('All files', '*.*')
+)
+
+image_path = filedialog.askopenfilename(title="Select an image", filetypes=filetypes)
+output_video_dir = filedialog.askdirectory(title="Select output video directory")
+image_filename = Path(image_path).stem
+print('image_filename', image_filename)
+output_video_path = f'{output_video_dir}/{image_filename}'
 blender_settings = {
     "render_settings": {
         "Render Engine": 'BLENDER_EEVEE',  # 'BLENDER_EEVEE'  # OR 'CYCLES'
@@ -30,7 +40,6 @@ blender_settings = {
         'color': (1.0, 0.0, 0.0)
     }}
 
-
 if __name__ == '__main__':
     clear_blender_scene()
     image = cv2.imread(image_path, 0)
@@ -47,5 +56,3 @@ if __name__ == '__main__':
     if not os.path.exists(blend_file_save_folder):
         os.makedirs(blend_file_save_folder)
     bpy.ops.wm.save_mainfile(filepath=f'{blend_file_save_folder}/out_blend_file.blend')
-
-
