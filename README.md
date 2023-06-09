@@ -76,9 +76,7 @@ The `bloom_settings` dictionary is composed of the following parameters:
 
 2. `bloom_threshold`: This value establishes the minimum intensity for a pixel to be considered for the Bloom effect. Higher values signify that fewer pixels qualify for the Bloom effect, i.e., only brighter regions of the image will contribute to the effect.
 
-3. `bloom_knee`: Affects the transition smoothness between bloomed
-
- and non-bloomed areas. Lower values result in a more distinct transition.
+3. `bloom_knee`: Affects the transition smoothness between bloomed and non-bloomed areas. Lower values result in a more distinct transition.
 
 4. `bloom_intensity`: Determines the strength of the Bloom effect. Higher values amplify the effect.
 
