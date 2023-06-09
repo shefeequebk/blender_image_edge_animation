@@ -22,7 +22,7 @@ Follow these steps in the GUI:
 1. Select an image file when the "Select an image" window appears.
 2. Specify the output video directory in the "Select output video directory" window.
 
-## Understanding the Configuration Settings 
+## Understanding the Configuration Settings - in main.py file
 
 
 ### Render Settings 
