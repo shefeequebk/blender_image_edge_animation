@@ -1,6 +1,6 @@
 # Blender Image Edge Animation - Create animations from images
 
-Check out this working video for more information: (https://www.youtube.com/watch?v=cjNpCEW_dEs)
+Check out this working video for more information: [Check out this video!](https://www.youtube.com/watch?v=cjNpCEW_dEs)
 [![Blender Image Edge Animation - Create animations from images](https://img.youtube.com/vi/cjNpCEW_dEs/0.jpg)](https://www.youtube.com/watch?v=cjNpCEW_dEs)
 
 ## Setup Instructions
